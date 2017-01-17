@@ -18,7 +18,7 @@ public interface Radio {
 	public void estado();
 	
 	/**
-	 * cambia de am a fm
+	 * cambia de la estacion am a fm
 	 */
 	public void frecuencia();
 	
