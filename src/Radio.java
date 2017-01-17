@@ -10,7 +10,35 @@
  * Descripción: clase abstracta de radio
  */
 
-public class Radio {
+public interface Radio {
 
+	/**
+	 * indica el estado del radio
+	 */
+	public void estado();
+	
+	/**
+	 * cambia de am a fm
+	 */
+	public void frecuencia();
+	
+	/**
+	 * cambial el dial de la estacion
+	 * @param:  indica el am y fm 
+	 */
+	public void cambiar(boolean cambio);
+	
+	/**
+	 * permite guardar una emisora en uno de los botones
+	 * @param: la estacion que se desea guardar
+	 */
+	public void guardar(int emisora);
+	
+	/**
+	 * permite seleccionar la emisora del boton
+	 * @param: la estacion que se selecciona
+	 */
+	public float seleccionar(int estacion);
+	
 
 }
