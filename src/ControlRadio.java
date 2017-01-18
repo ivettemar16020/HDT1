@@ -10,7 +10,12 @@ public class ControlRadio implements Radio {
 	 * indica el estado del radio
 	 */
 	public void estado(){
-		
+		if (x == true){
+			x = false;
+		}
+		else 
+			x = true;
+		this.apagado = x;
 	}
 	
 	/**
