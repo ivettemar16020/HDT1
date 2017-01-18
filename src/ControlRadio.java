@@ -33,7 +33,7 @@ public class ControlRadio implements Radio {
 	/**
 	 * indica el estado del radio
 	 */
-	public void estado(){
+	public void estado(boolean x){
 		if (x == true){
 			x = false;
 		}
