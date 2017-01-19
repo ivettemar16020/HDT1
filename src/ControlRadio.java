@@ -60,7 +60,7 @@ public class ControlRadio implements Radio {
 	 * A dozen modifiable push buttons (identified by integers 1 through 12) allow the listener 
 	 * to store and recall AM or FM frequencies. 
 	 * AM frequencies can be represented by multiples of 10 in the range 530 to 1610. 
-	 * FM frequencies are found at multiples of 0.2 in the range 87.9 to 107.9.�
+	 * FM frequencies are found at multiples of 0.2 in the range 87.9 to 107.9.”
 	 * @param:  indica el am y fm
 	 * @Override 
 	 */
@@ -115,7 +115,24 @@ public class ControlRadio implements Radio {
 	 * @Override
 	 */
 	public void guardar(int emisora){
-		
+		int[] listaAm = new int[12];
+		int[] listaFm = new int[12];
+		if (apagado = false){ // Verificar si está encendida y en AM.
+			if (am_fm == false){
+			listaAm[emisora] = emisora;
+			}
+			else 
+				if (am_fm == true){
+				listaFm[emisora] = emisora;
+			}
+				
+		}
+		for (int i = 0; 1 < listaAm.length; i++){
+			System.out.println(i);
+		}
+		for (int i = 0; 1 < listaFm.length; i++){
+			System.out.println(i);
+		}
 	}
 	
 	/**
