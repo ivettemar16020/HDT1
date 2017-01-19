@@ -10,7 +10,7 @@
  * Descripción: clase abstracta de radio
  */
 
-public interface Radio {
+public interface IRadio {
 
 	/**
 	 * indica el estado del radio

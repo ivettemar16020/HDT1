@@ -33,6 +33,7 @@ public class GUI {
 	private JButton btnOn_OFF;
 	private JButton btnAM_FM;
 	private ControlRadio miRadio;
+	private JLabel lblEmisora;
 
 	/**
 	 * Launch the application.
@@ -74,7 +75,7 @@ public class GUI {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
-		JLabel lblEmisora = new JLabel("");
+		lblEmisora = new JLabel("");
 		lblEmisora.setBackground(Color.WHITE);
 		lblEmisora.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEmisora.setFont(new Font("Lucida Grande", Font.PLAIN, 60));
@@ -251,6 +252,7 @@ public class GUI {
 					try{
 						// true == avanzar
 						miRadio.cambiar(true);
+						lblEmisora.setText(Float.toString(miRadio.getEmisora()));
 					}
 					catch(Exception e1){
 						JOptionPane.showMessageDialog(null,"Error");
@@ -262,6 +264,7 @@ public class GUI {
 					try{
 						// false == retroceder
 						miRadio.cambiar(false);
+						lblEmisora.setText(Float.toString(miRadio.getEmisora()));
 					}
 					catch(Exception e1){
 						JOptionPane.showMessageDialog(null,"Error");

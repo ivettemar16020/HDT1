@@ -1,10 +1,11 @@
 
-public class ControlRadio implements Radio {
+public class ControlRadio implements IRadio {
 
 	private boolean apagado;
 	private boolean am_fm;
 	private int am;
 	private float fm;
+	private float emisora; 
 
 	
 	// Constructor
@@ -71,39 +72,57 @@ public class ControlRadio implements Radio {
 		else{
 			// true = AM
 			if(am_fm == true){
-				if (am == 1610){
-					am = 530;
-					System.out.println(am);
-				}
+				
 				//true = avanzar
-				else if (cambio == true){
+				if (cambio == true){
 					int amTemp = am + 10;
 					am = amTemp;
 					System.out.println(am);
+					emisora = am;
+					
+					if (am >= 1610){
+						am = 530;
+						emisora = am;
+					}
 				}
 				//false = retroceder
 				else if(cambio == false){
 					int amTemp = am - 10;
 					am = amTemp;
 					System.out.println(am);
+					emisora = am;
+					
+					if(am <= 530){
+						am = 1610;
+						emisora = am;
+						}
 				}
 			}
 			else if (am_fm == false){
 				//true = avanzar
-				if(fm == (float)107.9){
-					fm = (float)87.9;
+				if(cambio == true){
+					double a = fm + 0.2;
+					fm = (float)a;
 					System.out.println(fm);
+					emisora = fm;
+					
+						if(fm >= (float)107.9){
+							fm = (float)87.9;
+							emisora = fm;
+					}
 				}
-				else if(cambio == true){
-					double a = fm - 0.2;
-					float fm = (float)a;
-					System.out.println(fm);
-				}
+				
 				//false = retroceder
 				else if (cambio == false){
 					double a = fm - 0.2;
-					float fm = (float)a;
+					fm = (float)a;
 					System.out.println(fm);
+					emisora = fm;
+					
+					if(fm <= (float)87.9){
+						fm = (float)107.9;
+						emisora = fm;
+				}
 				}
 			}
 			
@@ -162,7 +181,7 @@ public class ControlRadio implements Radio {
 	 * permite obtener la emisora en la que se encuentra la radio
 	 */
 	public float getEmisora(){
-	
+		return emisora;
 	}
 	
 }
