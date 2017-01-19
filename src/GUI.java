@@ -3,6 +3,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
@@ -93,11 +95,13 @@ public class GUI {
 		btnBack.setFont(new Font("Lucida Grande", Font.PLAIN, 36));
 		btnBack.setBounds(116, 186, 142, 57);
 		panel.add(btnBack);
+		btnBack.addActionListener(new Escucha());
 
 		btnForward = new JButton(">>");
 		btnForward.setFont(new Font("Lucida Grande", Font.PLAIN, 36));
 		btnForward.setBounds(375, 186, 142, 57);
 		panel.add(btnForward);
+		btnForward.addActionListener(new Escucha());
 
 		btnGuardar = new JButton("Guardar");
 		btnGuardar.setBounds(260, 186, 112, 57);
@@ -168,7 +172,8 @@ public class GUI {
 						miRadio.estado();
 					}
 					catch(Exception e1){
-						
+						JOptionPane.showMessageDialog(null,"Error");
+
 					}
 
 				}
@@ -177,9 +182,31 @@ public class GUI {
 						miRadio.frecuencia();
 					}
 					catch(Exception e1){
-						
+						JOptionPane.showMessageDialog(null,"Error");
 					}
 
+				}
+				
+				if (e.getSource() == btnForward){
+					try{
+						// true == avanzar
+						miRadio.cambiar(true);
+					}
+					catch(Exception e1){
+						JOptionPane.showMessageDialog(null,"Error");
+					}
+					
+				}
+				
+				if (e.getSource() == btnForward){
+					try{
+						// false == retroceder
+						miRadio.cambiar(false);
+					}
+					catch(Exception e1){
+						JOptionPane.showMessageDialog(null,"Error");
+					}
+					
 				}
 				
 				if (e.getSource() == btnGuardar){
@@ -187,9 +214,9 @@ public class GUI {
 						
 					}
 					catch(Exception e1){
-						
+						JOptionPane.showMessageDialog(null,"Error");
 					}
-					
+
 				}
 }
 			

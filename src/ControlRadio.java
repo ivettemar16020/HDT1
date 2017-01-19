@@ -5,15 +5,15 @@ public class ControlRadio implements Radio {
 	private boolean am_fm;
 	private int am;
 	private float fm;
-	private String emisora;
+
 	
 	// Constructor
 	public ControlRadio(){
 	
 	apagado = true;
 	am_fm = true; // true = esta en AM.
-	am = 590;
-	emisora = "";
+	am = 530;
+	fm = (float)87.9;
 	} 
 	
 	/**
@@ -58,9 +58,9 @@ public class ControlRadio implements Radio {
 	/**
 	 * cambial el dial de la estacion
 	 * A dozen modifiable push buttons (identified by integers 1 through 12) allow the listener 
-	 * to store and recall AM or FM frequencies. AM frequencies 
-	 * can be represented by multiples of 10 in the range 530 to 1610. FM
-	 *  frequencies are found at multiples of 0.2 in the range 87.9 to 107.9.”
+	 * to store and recall AM or FM frequencies. 
+	 * AM frequencies can be represented by multiples of 10 in the range 530 to 1610. 
+	 * FM frequencies are found at multiples of 0.2 in the range 87.9 to 107.9.”
 	 * @param:  indica el am y fm
 	 * @Override 
 	 */
@@ -71,34 +71,42 @@ public class ControlRadio implements Radio {
 		else{
 			// true = AM
 			if(am_fm == true){
-				
+				if (am == 1610){
+					am = 530;
+					System.out.println(am);
+				}
+				//true = avanzar
+				else if (cambio == true){
+					am = am + 10;
+					System.out.println(am);
+				}
+				//false = retroceder
+				else if(cambio == false){
+					am = am - 10;
+					System.out.println(am);
+				}
 			}
 			else if (am_fm == false){
-				
+				//true = avanzar
+				if(fm == (float)107.9){
+					fm = (float)87.9;
+					System.out.println(fm);
+				}
+				else if(cambio == true){
+					double a = fm - 0.2;
+					float fm = (float)a;
+					System.out.println(fm);
+				}
+				//false = retroceder
+				else if (cambio == false){
+					double a = fm - 0.2;
+					float fm = (float)a;
+					System.out.println(fm);
+				}
 			}
 			
 		}	
-		
-		if (i == true){
-			if (am <= 1600 && am >= 590){
-				am = am + 10;
-				System.out.println(am);
-			}
-			else 
-				am = 590;
-				System.out.println(am);
-		}
-		else if (i == false){
-			if (fm <= 86.7 && fm >= 89.9){
-				fm = fm + 0.2;
-				System.out.println(fm);
-			}
-			else
-				fm = 89.9;
-				System.out.println(fm);
-		}
 	}
-	
 	/**
 	 * permite guardar una emisora en uno de los botones
 	 * @param: la estacion que se desea guardar
