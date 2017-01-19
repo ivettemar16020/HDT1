@@ -30,6 +30,7 @@ public class GUI {
 	private JButton btn12;
 	private JButton btnOn_OFF;
 	private JButton btnAM_FM;
+	private ControlRadio miRadio;
 
 	/**
 	 * Launch the application.
@@ -58,6 +59,9 @@ public class GUI {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		miRadio = new ControlRadio();
+		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 600, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -76,16 +80,14 @@ public class GUI {
 		panel.add(lblEmisora);
 
 		btnOn_OFF = new JButton("ON/OFF");
-		btnOn_OFF.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnOn_OFF.setBounds(18, 18, 98, 74);
 		panel.add(btnOn_OFF);
+		btnOn_OFF.addActionListener(new Escucha());
 
 		btnAM_FM = new JButton("AM/FM");
 		btnAM_FM.setBounds(473, 18, 98, 74);
 		panel.add(btnAM_FM);
+		btnAM_FM.addActionListener(new Escucha());
 
 		btnBack = new JButton("<<");
 		btnBack.setFont(new Font("Lucida Grande", Font.PLAIN, 36));
@@ -163,7 +165,16 @@ public class GUI {
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == btnOn_OFF){
 					try{
+						miRadio.estado();
+					}
+					catch(Exception e1){
 						
+					}
+
+				}
+				if (e.getSource() == btnAM_FM){
+					try{
+						miRadio.frecuencia();
 					}
 					catch(Exception e1){
 						
