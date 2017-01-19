@@ -204,6 +204,7 @@ public class GUI {
 							btnBack.setEnabled(true);
 							btnGuardar.setEnabled(true);
 							btnForward.setEnabled(true);
+							lblEmisora.setVisible(true);
 						}
 						if (miRadio.getEstado() == true){ //Cuando el radio esta apagado 
 							btnAM_FM.setEnabled(false);
@@ -222,6 +223,7 @@ public class GUI {
 							btnBack.setEnabled(false);
 							btnGuardar.setEnabled(false);
 							btnForward.setEnabled(false);
+							lblEmisora.setVisible(false);
 						}
 					}
 					catch(Exception e1){
