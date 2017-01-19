@@ -94,11 +94,11 @@ public class GUI {
 
 		btnForward = new JButton(">>");
 		btnForward.setFont(new Font("Lucida Grande", Font.PLAIN, 36));
-		btnForward.setBounds(330, 186, 142, 57);
+		btnForward.setBounds(375, 186, 142, 57);
 		panel.add(btnForward);
 
 		btnGuardar = new JButton("Guardar");
-		btnGuardar.setBounds(260, 186, 68, 57);
+		btnGuardar.setBounds(260, 186, 112, 57);
 		panel.add(btnGuardar);
 
 		btn1 = new JButton("1");
@@ -162,8 +162,25 @@ public class GUI {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == btnOn_OFF){
+					try{
+						
+					}
+					catch(Exception e1){
+						
+					}
 
 				}
+				
+				if (e.getSource() == btnGuardar){
+					try{
+						
+					}
+					catch(Exception e1){
+						
+					}
+					
+				}
 }
+			
 }
 }
