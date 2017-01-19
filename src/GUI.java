@@ -32,8 +32,9 @@ public class GUI {
 	private JButton btn12;
 	private JButton btnOn_OFF;
 	private JButton btnAM_FM;
-	private ControlRadio miRadio;
 	private JLabel lblEmisora;
+	
+	private IRadio miRadio; //AQUI SE INSTANCIA LA INTERFACE DEL RADIO
 
 	/**
 	 * Launch the application.
