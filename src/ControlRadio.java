@@ -148,14 +148,14 @@ public class ControlRadio implements Radio {
 	 * permite obtener el dato de la frecuencia en la que se encuentra el radio
 	 */
 	public boolean getFrecuencia(){
-	
+		return am_fm;
 	}
 	
 	/**
 	 * permite obtener el estado en el que se encuentra el radio
 	 */
 	public boolean getEstado(){
-	
+		return apagado; 
 	}
 	
 	/**

@@ -186,22 +186,42 @@ public class GUI {
 				if (e.getSource() == btnOn_OFF){
 					try{
 						miRadio.estado();
-						btnAM_FM.setEnabled(true);
-						btn1.setEnabled(true);
-						btn2.setEnabled(true);
-						btn3.setEnabled(true);
-						btn4.setEnabled(true);
-						btn5.setEnabled(true);
-						btn6.setEnabled(true);
-						btn7.setEnabled(true);
-						btn8.setEnabled(true);
-						btn9.setEnabled(true);
-						btn10.setEnabled(true);
-						btn11.setEnabled(true);
-						btn12.setEnabled(true);
-						btnBack.setEnabled(true);
-						btnGuardar.setEnabled(true);
-						btnForward.setEnabled(true);
+						if (miRadio.getEstado() == false){ //Cuando el radio esta encendido
+							btnAM_FM.setEnabled(true);
+							btn1.setEnabled(true);
+							btn2.setEnabled(true);
+							btn3.setEnabled(true);
+							btn4.setEnabled(true);
+							btn5.setEnabled(true);
+							btn6.setEnabled(true);
+							btn7.setEnabled(true);
+							btn8.setEnabled(true);
+							btn9.setEnabled(true);
+							btn10.setEnabled(true);
+							btn11.setEnabled(true);
+							btn12.setEnabled(true);
+							btnBack.setEnabled(true);
+							btnGuardar.setEnabled(true);
+							btnForward.setEnabled(true);
+						}
+						if (miRadio.getEstado() == true){ //Cuando el radio esta apagado 
+							btnAM_FM.setEnabled(false);
+							btn1.setEnabled(false);
+							btn2.setEnabled(false);
+							btn3.setEnabled(false);
+							btn4.setEnabled(false);
+							btn5.setEnabled(false);
+							btn6.setEnabled(false);
+							btn7.setEnabled(false);
+							btn8.setEnabled(false);
+							btn9.setEnabled(false);
+							btn10.setEnabled(false);
+							btn11.setEnabled(false);
+							btn12.setEnabled(false);
+							btnBack.setEnabled(false);
+							btnGuardar.setEnabled(false);
+							btnForward.setEnabled(false);
+						}
 					}
 					catch(Exception e1){
 						JOptionPane.showMessageDialog(null,"Error");
@@ -212,6 +232,14 @@ public class GUI {
 				if (e.getSource() == btnAM_FM){
 					try{
 						miRadio.frecuencia();
+						//true = AM
+						if (miRadio.getFrecuencia() == true){
+							btnAM_FM.setText("AM");
+						}
+						//false = FM
+						else if (miRadio.getFrecuencia() == false){
+							btnAM_FM.setText("FM");
+						}
 					}
 					catch(Exception e1){
 						JOptionPane.showMessageDialog(null,"Error");
@@ -230,7 +258,7 @@ public class GUI {
 					
 				}
 				
-				if (e.getSource() == btnForward){
+				if (e.getSource() == btnBack){
 					try{
 						// false == retroceder
 						miRadio.cambiar(false);
