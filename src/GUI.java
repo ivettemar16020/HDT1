@@ -89,63 +89,77 @@ public class GUI {
 		btnAM_FM = new JButton("AM/FM");
 		btnAM_FM.setBounds(473, 18, 98, 74);
 		panel.add(btnAM_FM);
+		btnAM_FM.setEnabled(false);
 		btnAM_FM.addActionListener(new Escucha());
 
 		btnBack = new JButton("<<");
 		btnBack.setFont(new Font("Lucida Grande", Font.PLAIN, 36));
 		btnBack.setBounds(116, 186, 142, 57);
 		panel.add(btnBack);
+		btnBack.setEnabled(false);
 		btnBack.addActionListener(new Escucha());
 
 		btnForward = new JButton(">>");
 		btnForward.setFont(new Font("Lucida Grande", Font.PLAIN, 36));
 		btnForward.setBounds(375, 186, 142, 57);
 		panel.add(btnForward);
+		btnForward.setEnabled(false);
 		btnForward.addActionListener(new Escucha());
 
 		btnGuardar = new JButton("Guardar");
 		btnGuardar.setBounds(260, 186, 112, 57);
 		panel.add(btnGuardar);
+		btnGuardar.setEnabled(false);
 
 		btn1 = new JButton("1");
 		btn1.setBounds(18, 278, 51, 74);
 		panel.add(btn1);
+		btn1.setEnabled(false);
 
 		btn2 = new JButton("2");
 		btn2.setBounds(64, 278, 51, 74);
 		panel.add(btn2);
+		btn2.setEnabled(false);
 
 		btn3 = new JButton("3");
 		btn3.setBounds(110, 278, 51, 74);
 		panel.add(btn3);
+		btn3.setEnabled(false);
 
 		btn4 = new JButton("4");
 		btn4.setBounds(156, 278, 51, 74);
 		panel.add(btn4);
+		btn4.setEnabled(false);
 
 		btn5 = new JButton("5");
 		btn5.setBounds(202, 278, 51, 74);
 		panel.add(btn5);
+		btn5.setEnabled(false);
 
 		btn6 = new JButton("6");
 		btn6.setBounds(248, 278, 51, 74);
 		panel.add(btn6);
+		btn6.setEnabled(false);
 
 		btn7 = new JButton("7");
 		btn7.setBounds(294, 278, 51, 74);
 		panel.add(btn7);
+		btn7.setEnabled(false);
 
 		btn8 = new JButton("8");
 		btn8.setBounds(340, 278, 51, 74);
 		panel.add(btn8);
+		btn8.setEnabled(false);
 
 		btn9 = new JButton("9");
 		btn9.setBounds(386, 278, 51, 74);
 		panel.add(btn9);
+		btn9.setEnabled(false);
 
 		btn10 = new JButton("10");
 		btn10.setBounds(432, 278, 51, 74);
 		panel.add(btn10);
+		btn10.setEnabled(false);
 
 		btn11 = new JButton("11");
 		btn11.addActionListener(new ActionListener() {
@@ -154,6 +168,7 @@ public class GUI {
 		});
 		btn11.setBounds(478, 278, 51, 74);
 		panel.add(btn11);
+		btn11.setEnabled(false);
 
 		btn12 = new JButton("12");
 		btn12.addActionListener(new ActionListener() {
@@ -162,6 +177,7 @@ public class GUI {
 		});
 		btn12.setBounds(524, 278, 51, 74);
 		panel.add(btn12);
+		btn12.setEnabled(false);
 	}
 	// Escucha los eventos a suceder.
 		private class Escucha implements ActionListener {
@@ -170,6 +186,22 @@ public class GUI {
 				if (e.getSource() == btnOn_OFF){
 					try{
 						miRadio.estado();
+						btnAM_FM.setEnabled(true);
+						btn1.setEnabled(true);
+						btn2.setEnabled(true);
+						btn3.setEnabled(true);
+						btn4.setEnabled(true);
+						btn5.setEnabled(true);
+						btn6.setEnabled(true);
+						btn7.setEnabled(true);
+						btn8.setEnabled(true);
+						btn9.setEnabled(true);
+						btn10.setEnabled(true);
+						btn11.setEnabled(true);
+						btn12.setEnabled(true);
+						btnBack.setEnabled(true);
+						btnGuardar.setEnabled(true);
+						btnForward.setEnabled(true);
 					}
 					catch(Exception e1){
 						JOptionPane.showMessageDialog(null,"Error");
