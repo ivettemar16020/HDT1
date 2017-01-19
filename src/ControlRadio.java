@@ -77,12 +77,14 @@ public class ControlRadio implements Radio {
 				}
 				//true = avanzar
 				else if (cambio == true){
-					am = am + 10;
+					int amTemp = am + 10;
+					am = amTemp;
 					System.out.println(am);
 				}
 				//false = retroceder
 				else if(cambio == false){
-					am = am - 10;
+					int amTemp = am - 10;
+					am = amTemp;
 					System.out.println(am);
 				}
 			}
