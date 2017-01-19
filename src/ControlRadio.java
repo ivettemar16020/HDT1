@@ -144,4 +144,25 @@ public class ControlRadio implements Radio {
 		
 	}
 	
+	/**
+	 * permite obtener el dato de la frecuencia en la que se encuentra el radio
+	 */
+	public boolean getFrecuencia(){
+	
+	}
+	
+	/**
+	 * permite obtener el estado en el que se encuentra el radio
+	 */
+	public boolean getEstado(){
+	
+	}
+	
+	/**
+	 * permite obtener la emisora en la que se encuentra la radio
+	 */
+	public float getEmisora(){
+	
+	}
+	
 }
