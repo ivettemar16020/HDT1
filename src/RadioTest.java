@@ -6,9 +6,13 @@ public class RadioTest {
 
 	ControlRadio cr = new ControlRadio();
 	
-	//@Test
-	//public void testSeleccionar(){
-	//}
+	/**
+	 * No se realizo porque no se sabe exactamente 
+	 * que emisora es la que se obtendra
+	@Test
+	public void testSeleccionar(){
+	}
+	*/
 	
 	@Test
 	public void testGetFrecuencia(){
@@ -23,7 +27,11 @@ public class RadioTest {
 		boolean esperado = true;
 		assertEquals(esperado, resultado);
 	}
+	
+	
 	/**
+	 * No se realizo porque no se sabe con exactitud cual 
+	 * sera la respuesta esperada del radio (emisoras cambian)
 	@Test
 	public void testGetEmisora(){
 		float resultado = cr.getEmisora();

@@ -112,74 +112,80 @@ public class GUI {
 		btnGuardar.setBounds(260, 186, 112, 57);
 		panel.add(btnGuardar);
 		btnGuardar.setEnabled(false);
+		btnGuardar.addActionListener(new Escucha());
 
 		btn1 = new JButton("1");
 		btn1.setBounds(18, 278, 51, 74);
 		panel.add(btn1);
 		btn1.setEnabled(false);
+		btn1.addActionListener(new Escucha());
 
 		btn2 = new JButton("2");
 		btn2.setBounds(64, 278, 51, 74);
 		panel.add(btn2);
 		btn2.setEnabled(false);
+		btn2.addActionListener(new Escucha());
 
 		btn3 = new JButton("3");
 		btn3.setBounds(110, 278, 51, 74);
 		panel.add(btn3);
 		btn3.setEnabled(false);
+		btn3.addActionListener(new Escucha());
 
 		btn4 = new JButton("4");
 		btn4.setBounds(156, 278, 51, 74);
 		panel.add(btn4);
 		btn4.setEnabled(false);
+		btn4.addActionListener(new Escucha());
 
 		btn5 = new JButton("5");
 		btn5.setBounds(202, 278, 51, 74);
 		panel.add(btn5);
 		btn5.setEnabled(false);
+		btn5.addActionListener(new Escucha());
 
 		btn6 = new JButton("6");
 		btn6.setBounds(248, 278, 51, 74);
 		panel.add(btn6);
 		btn6.setEnabled(false);
+		btn6.addActionListener(new Escucha());
 
 		btn7 = new JButton("7");
 		btn7.setBounds(294, 278, 51, 74);
 		panel.add(btn7);
 		btn7.setEnabled(false);
+		btn7.addActionListener(new Escucha());
 
 		btn8 = new JButton("8");
 		btn8.setBounds(340, 278, 51, 74);
 		panel.add(btn8);
 		btn8.setEnabled(false);
+		btn8.addActionListener(new Escucha());
 
 		btn9 = new JButton("9");
 		btn9.setBounds(386, 278, 51, 74);
 		panel.add(btn9);
 		btn9.setEnabled(false);
+		btn9.addActionListener(new Escucha());
 
 		btn10 = new JButton("10");
 		btn10.setBounds(432, 278, 51, 74);
 		panel.add(btn10);
 		btn10.setEnabled(false);
+		btn10.addActionListener(new Escucha());
 
 		btn11 = new JButton("11");
-		btn11.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btn11.setBounds(478, 278, 51, 74);
 		panel.add(btn11);
 		btn11.setEnabled(false);
+		btn11.addActionListener(new Escucha());
+		
 
 		btn12 = new JButton("12");
-		btn12.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btn12.setBounds(524, 278, 51, 74);
 		panel.add(btn12);
 		btn12.setEnabled(false);
+		btn12.addActionListener(new Escucha());
 	}
 	// Escucha los eventos a suceder.
 		private class Escucha implements ActionListener {
@@ -277,14 +283,136 @@ public class GUI {
 				
 				if (e.getSource() == btnGuardar){
 					try{
-						
+						String b = lblEmisora.getText();
+						float c = Float.parseFloat(b);
+						int a = (int)c;
+						miRadio.guardar(a);
 					}
 					catch(Exception e1){
 						JOptionPane.showMessageDialog(null,"Error");
 					}
 
+					
 				}
-}
-			
-}
-}
+				if (e.getSource() == btn1){
+					try{
+						String boton = Float.toString(miRadio.seleccionar(0));
+						lblEmisora.setText(boton);
+					}
+					catch(Exception e1){
+						JOptionPane.showMessageDialog(null,"Error");
+					}
+				}
+				
+				if (e.getSource() == btn2){
+					try{
+						String boton = Float.toString(miRadio.seleccionar(1));
+						lblEmisora.setText(boton);
+					}
+					catch(Exception e1){
+						JOptionPane.showMessageDialog(null,"Error");
+					}
+				}
+				
+				if (e.getSource() == btn3){
+					try{
+						String boton = Float.toString(miRadio.seleccionar(2));
+						lblEmisora.setText(boton);
+					}
+					catch(Exception e1){
+						JOptionPane.showMessageDialog(null,"Error");
+					}
+				}
+				
+				if (e.getSource() == btn4){
+					try{
+						String boton = Float.toString(miRadio.seleccionar(3));
+						lblEmisora.setText(boton);
+					}
+					catch(Exception e1){
+						JOptionPane.showMessageDialog(null,"Error");
+					}
+				}
+				
+				if (e.getSource() == btn5){
+					try{
+						String boton = Float.toString(miRadio.seleccionar(4));
+						lblEmisora.setText(boton);
+					}
+					catch(Exception e1){
+						JOptionPane.showMessageDialog(null,"Error");
+					}
+				}
+				
+				if (e.getSource() == btn6){
+					try{
+						String boton = Float.toString(miRadio.seleccionar(5));
+						lblEmisora.setText(boton);
+					}
+					catch(Exception e1){
+						JOptionPane.showMessageDialog(null,"Error");
+					}
+				}
+				
+				if (e.getSource() == btn7){
+					try{
+						String boton = Float.toString(miRadio.seleccionar(6));
+						lblEmisora.setText(boton);
+					}
+					catch(Exception e1){
+						JOptionPane.showMessageDialog(null,"Error");
+					}
+				}
+				
+				if (e.getSource() == btn8){
+					try{
+						String boton = Float.toString(miRadio.seleccionar(7));
+						lblEmisora.setText(boton);
+					}
+					catch(Exception e1){
+						JOptionPane.showMessageDialog(null,"Error");
+					}
+				}
+				
+				if (e.getSource() == btn9){
+					try{
+						String boton = Float.toString(miRadio.seleccionar(8));
+						lblEmisora.setText(boton);
+					}
+					catch(Exception e1){
+						JOptionPane.showMessageDialog(null,"Error");
+					}
+				}
+				
+				if (e.getSource() == btn10){
+					try{
+						String boton = Float.toString(miRadio.seleccionar(9));
+						lblEmisora.setText(boton);
+					}
+					catch(Exception e1){
+						JOptionPane.showMessageDialog(null,"Error");
+					}
+				}
+				
+				if (e.getSource() == btn11){
+					try{
+						String boton = Float.toString(miRadio.seleccionar(10));
+						lblEmisora.setText(boton);
+					}
+					catch(Exception e1){
+						JOptionPane.showMessageDialog(null,"Error");
+					}
+				}
+				
+				if (e.getSource() == btn12){
+					try{
+						String boton = Float.toString(miRadio.seleccionar(11));
+						lblEmisora.setText(boton);
+					}
+					catch(Exception e1){
+						JOptionPane.showMessageDialog(null,"Error");
+					}
+				}
+			}
+		}
+	}

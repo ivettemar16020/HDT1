@@ -6,6 +6,8 @@ public class ControlRadio implements IRadio {
 	private int am;
 	private float fm;
 	private float emisora; 
+	private float[] estaciones; 
+	private int cantEmisoras;
 
 	
 	// Constructor
@@ -15,6 +17,8 @@ public class ControlRadio implements IRadio {
 	am_fm = true; // true = esta en AM.
 	am = 530;
 	fm = (float)87.9;
+	cantEmisoras = 0;
+	estaciones = new float[12];
 	} 
 	
 	/**
@@ -133,24 +137,13 @@ public class ControlRadio implements IRadio {
 	 * @param: la estacion que se desea guardar
 	 * @Override
 	 */
+	
 	public void guardar(int emisora){
-		int[] listaAm = new int[12];
-		int[] listaFm = new int[12];
-		if (apagado = false){ // Verificar si está encendida y en AM.
-			if (am_fm == false){
-			listaAm[emisora] = emisora;
-			}
-			else 
-				if (am_fm == true){
-				listaFm[emisora] = emisora;
-			}
-				
-		}
-		for (int i = 0; 1 < listaAm.length; i++){
-			System.out.println(i);
-		}
-		for (int i = 0; 1 < listaFm.length; i++){
-			System.out.println(i);
+		float emiTemporal = emisora; 
+		if(cantEmisoras < 12){
+			estaciones[cantEmisoras] = emiTemporal; 
+			System.out.println("La emisora guardada es: " + estaciones[cantEmisoras]);
+			cantEmisoras++;
 		}
 	}
 	
@@ -160,6 +153,9 @@ public class ControlRadio implements IRadio {
 	 * @Override
 	 */
 	public float seleccionar(int estacion){
+		float emi_seleccionada = estaciones[estacion];
+		return emi_seleccionada;
+		//Exito
 		
 	}
 	
