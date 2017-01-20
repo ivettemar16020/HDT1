@@ -196,6 +196,7 @@ public class GUI {
 					try{
 						miRadio.estado();
 						if (miRadio.getEstado() == false){ //Cuando el radio esta encendido
+							btnOn_OFF.setText("ON");
 							btnAM_FM.setEnabled(true);
 							btn1.setEnabled(true);
 							btn2.setEnabled(true);
@@ -214,7 +215,8 @@ public class GUI {
 							btnForward.setEnabled(true);
 							lblEmisora.setVisible(true);
 						}
-						if (miRadio.getEstado() == true){ //Cuando el radio esta apagado 
+						if (miRadio.getEstado() == true){ //Cuando el radio esta apagado
+							btnOn_OFF.setText("OFF");
 							btnAM_FM.setEnabled(false);
 							btn1.setEnabled(false);
 							btn2.setEnabled(false);
