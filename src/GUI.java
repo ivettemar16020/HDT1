@@ -65,6 +65,7 @@ public class GUI {
 	private void initialize() {
 		
 		miRadio = new ControlRadio();
+		//miRadio = new RadioCool();
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 600, 400);
